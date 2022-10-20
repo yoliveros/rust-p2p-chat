@@ -138,7 +138,7 @@
         </Directory>
 
         <DirectoryRef Id="ApplicationProgramsFolder">
-              <Component Id="ApplicationShortcut" Guid="PUT-GUID-HERE">
+              <Component Id="ApplicationShortcut" Guid="*">
                   <Shortcut Id="ApplicationStartMenuShortcut" 
                             Name="P2P Chat"
                             Description="P2P Chat"
