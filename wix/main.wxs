@@ -61,8 +61,8 @@
 
     <Product
         Id='*'
-        Name='P2P Chat'
-        UpgradeCode='AA0254A7-AA11-4792-9E28-1EEFDEDC7C7A'
+        Name='p2p-chat'
+        UpgradeCode='52F8D63C-7122-4826-8AB2-D67F5B9A70EB'
         Manufacturer='Yoelvis Oliveros'
         Language='1033'
         Codepage='1252'
@@ -86,7 +86,6 @@
         <Property Id='DiskPrompt' Value='P2P Chat Installation'/>
 
         <Directory Id='TARGETDIR' Name='SourceDir'>
-           
             <Directory Id='$(var.PlatformProgramFilesFolder)' Name='PFiles'>
                 <Directory Id='APPLICATIONFOLDER' Name='P2P Chat'>
                     
@@ -111,7 +110,7 @@
                     -->
 
                     <Directory Id='Bin' Name='bin'>
-                        <Component Id='Path' Guid='776C08BD-36C3-4009-872E-3DB78D4D8025' KeyPath='yes'>
+                        <Component Id='Path' Guid='B3EFF7AD-6500-4C8D-8C64-D6602C1D0C7A' KeyPath='yes'>
                             <Environment
                                 Id='PATH'
                                 Name='PATH'
@@ -131,24 +130,29 @@
                         </Component>
                     </Directory>
                 </Directory>
-            </Directory> 
+            </Directory>
             <Directory Id="ProgramMenuFolder">
                 <Directory Id="ApplicationProgramsFolder" Name="P2P Chat"/>
             </Directory>
         </Directory>
 
-        <DirectoryRef Id="ApplicationProgramsFolder">
-              <Component Id="ApplicationShortcut" Guid="*">
-                  <Shortcut Id="ApplicationStartMenuShortcut" 
-                            Name="P2P Chat"
-                            Description="P2P Chat"
-                            Target="[#p2p-chat.exe]"
-                            WorkingDirectory="APPLICATIONROOTDIRECTORY"/>
-                  <RemoveFolder Id="CleanUpShortCut" Directory="ApplicationProgramsFolder" On="uninstall"/>
-                  <RegistryValue Root="HKCU" Key="Software\MyCompany\MyApplicationName" Name="installed" Type="integer" Value="1" KeyPath="yes"/>
-              </Component>
-          </DirectoryRef>
+        <DirectoryRef Id="APPLICATIONROOTDIRECTORY">
+            <Component Id="p2p-chat.exe" Guid="*">
+                <File Id="p2p-chat.exe" Source="MySourceFiles\MyApplication.exe" KeyPath="yes" Checksum="yes"/>
+            </Component>
+        </DirectoryRef>
 
+        <DirectoryRef Id="ApplicationProgramsFolder">
+            <Component Id="ApplicationShortcut" Guid="*">
+                <Shortcut Id="ApplicationStartMenuShortcut" 
+                          Name="P2P Chat"
+                          Description="P2P Chat build in rust"
+                          Target="[#p2p-chat.exe]"
+                          WorkingDirectory="APPLICATIONROOTDIRECTORY" />
+                <RemoveFolder Id="CleanUpShortCut" Directory="ApplicationProgramsFolder" On="uninstall"/>
+                <RegistryValue Root="HKCU" Key="Software\P2PChat" Name="installed" Type="integer" Value="1" KeyPath="yes" />
+            </Component>
+        </DirectoryRef>
 
         <Feature
             Id='Binaries'
@@ -188,7 +192,7 @@
           The product icon is the graphic that appears in the Add/Remove
           Programs control panel for the application.
         -->
-        <Icon Id='ProductICO' SourceFile='wix\snail-icon.png'/>
+        <!--<Icon Id='ProductICO' SourceFile='wix\Product.ico'/>-->
         <!--<Property Id='ARPPRODUCTICON' Value='ProductICO' />-->
 
         
