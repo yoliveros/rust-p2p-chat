@@ -138,7 +138,7 @@
 
         <DirectoryRef Id="$(var.PlatformProgramFilesFolder)">
             <Component Id="p2pchat.exe" Guid="*">
-                <File Id="p2pchat.exe" Source="MySourceFiles\p2p-chat.exe" KeyPath="yes" Checksum="yes"/>
+                <File Id="p2pchat.exe" Source="P2PChat\p2p-chat.exe" KeyPath="yes" Checksum="yes"/>
             </Component>
         </DirectoryRef>
 
