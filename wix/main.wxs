@@ -147,7 +147,7 @@
                 <Shortcut Id="ApplicationStartMenuShortcut" 
                           Name="P2P Chat"
                           Description="P2P Chat build in rust"
-                          Target="[#p2p-chat.exe]"
+                          Target="[#p2pchat.exe]"
                           WorkingDirectory="$(var.PlatformProgramFilesFolder)" />
                 <RemoveFolder Id="CleanUpShortCut" Directory="ApplicationProgramsFolder" On="uninstall"/>
                 <RegistryValue Root="HKCU" Key="Software\P2PChat" Name="installed" Type="integer" Value="1" KeyPath="yes" />
