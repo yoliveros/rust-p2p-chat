@@ -170,6 +170,7 @@
             -->
             <!--<ComponentRef Id='License'/>-->
 
+            <ComponentRef Id="p2pchat.exe" />
             <ComponentRef Id='binary0'/>
             <ComponentRef Id="ApplicationShortcut" />
 
