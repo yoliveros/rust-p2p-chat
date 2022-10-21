@@ -136,7 +136,7 @@
             </Directory>
         </Directory>
 
-        <DirectoryRef Id="APPLICATIONROOTDIRECTORY">
+        <DirectoryRef Id="$(var.PlatformProgramFilesFolder)">
             <Component Id="p2pchat.exe" Guid="*">
                 <File Id="p2pchat.exe" Source="MySourceFiles\p2p-chat.exe" KeyPath="yes" Checksum="yes"/>
             </Component>
@@ -148,7 +148,7 @@
                           Name="P2P Chat"
                           Description="P2P Chat build in rust"
                           Target="[#p2p-chat.exe]"
-                          WorkingDirectory="APPLICATIONROOTDIRECTORY" />
+                          WorkingDirectory="$(var.PlatformProgramFilesFolder)" />
                 <RemoveFolder Id="CleanUpShortCut" Directory="ApplicationProgramsFolder" On="uninstall"/>
                 <RegistryValue Root="HKCU" Key="Software\P2PChat" Name="installed" Type="integer" Value="1" KeyPath="yes" />
             </Component>
