@@ -138,7 +138,7 @@
 
         <DirectoryRef Id="$(var.PlatformProgramFilesFolder)">
             <Component Id="p2pchat.exe" Guid="*">
-                <File Id="p2pchat.exe" Name="p2p-chat.exe" Source="$(var.CargoTargetBinDir)/p2p-chat.exe" KeyPath="yes" Checksum="yes"/>
+                <File Id="p2chat" Name="p2p-chat.exe" Source="$(var.CargoTargetBinDir)/p2p-chat.exe" KeyPath="yes" Checksum="yes"/>
             </Component>
         </DirectoryRef>
 
@@ -193,7 +193,7 @@
           The product icon is the graphic that appears in the Add/Remove
           Programs control panel for the application.
         -->
-        <!--<Icon Id='ProductICO' SourceFile='wix\Product.ico'/>-->
+        <Icon Id='ProductICO' SourceFile='wix\snail.ico'/>
         <!--<Property Id='ARPPRODUCTICON' Value='ProductICO' />-->
 
         
