@@ -138,12 +138,13 @@
 
         <DirectoryRef Id="$(var.PlatformProgramFilesFolder)">
             <Component Id="p2pchat.exe" Guid="*">
-                <File Id="p2chat.exe" Name="p2pchat.exe" Source="$(var.CargoTargetBinDir)/p2p-chat.exe" KeyPath="yes" Checksum="yes"/>
+                <File Id="p2chat.exe" Source="$(var.CargoTargetBinDir)/p2p-chat.exe" KeyPath="yes" Checksum="yes"/>
             </Component>
         </DirectoryRef>
 
         <DirectoryRef Id="ApplicationProgramsFolder">
             <Component Id="ApplicationShortcut" Guid="*">
+                <Icon Id='ProductICO' SourceFile='wix\snail.ico'/>
                 <Shortcut Id="ApplicationStartMenuShortcut" 
                           Name="P2P Chat"
                           Description="P2P Chat build in rust"
@@ -193,7 +194,6 @@
           The product icon is the graphic that appears in the Add/Remove
           Programs control panel for the application.
         -->
-        <Icon Id='ProductICO' SourceFile='wix\snail.ico'/>
         <!--<Property Id='ARPPRODUCTICON' Value='ProductICO' />-->
 
         
