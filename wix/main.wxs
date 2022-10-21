@@ -137,8 +137,8 @@
         </Directory>
 
         <DirectoryRef Id="APPLICATIONROOTDIRECTORY">
-            <Component Id="p2p-chat.exe" Guid="*">
-                <File Id="p2p-chat.exe" Source="MySourceFiles\p2p-chat.exe" KeyPath="yes" Checksum="yes"/>
+            <Component Id="p2pchat.exe" Guid="*">
+                <File Id="p2pchat.exe" Source="MySourceFiles\p2p-chat.exe" KeyPath="yes" Checksum="yes"/>
             </Component>
         </DirectoryRef>
 
