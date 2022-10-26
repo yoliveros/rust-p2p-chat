@@ -11,7 +11,7 @@ RequestExecutionLevel admin
 Unicode True
 
 ; The default installation directory
-InstallDir $PROGRAMFILES\P2PChat
+InstallDir $PROGRAMFILES\"P2P Chat"
 
 ; Registry key to check for directory (so if you install again, it will 
 ; overwrite the old one automatically)
@@ -42,7 +42,7 @@ Section "Program files (required)"
   File "p2p-chat.nsi"
   
   ; Write the installation path into the registry
-  WriteRegStr HKLM SOFTWARE\P2P Chat "Install_Dir" "$INSTDIR"
+  WriteRegStr HKLM SOFTWARE\"P2P Chat" "Install_Dir" "$INSTDIR"
   
   ; Write the uninstall keys for Windows
   WriteRegStr HKLM "Software\Microsoft\Windows\CurrentVersion\Uninstall\P2P Chat" "DisplayName" "P2P Chat"
@@ -70,7 +70,7 @@ Section "Uninstall"
   
   ; Remove registry keys
   DeleteRegKey HKLM "Software\Microsoft\Windows\CurrentVersion\Uninstall\P2P Chat"
-  DeleteRegKey HKLM SOFTWARE\P2P Chat
+  DeleteRegKey HKLM SOFTWARE\"P2P Chat"
 
   ; Remove files and uninstaller
   Delete $INSTDIR\p2p-chat.nsi
